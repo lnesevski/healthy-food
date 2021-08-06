@@ -1,0 +1,17 @@
+<div class="text-center h5">Shopping List</div>
+<div class="container grid" *ngIf="list.length >= 0">
+    <div class="col card m-3" *ngFor="let meal of list">
+        <div class="h6">{{meal.title}}</div>
+        <div class="list-group-item" *ngFor="let i of meal?.ingredients">
+            <span class="text">{{i}}</span>
+        </div>
+        <input type="button" value="Remove from list (already bought)" class="btn btn-outline-danger"
+            (click)="removeMeal(meal)">
+    </div>
+
+    <div *ngIf="list.length === 0" class="container alert alert-secondary">
+        <div class="row">
+            <div class="col">Your List is Empty <a class="alert-link" [routerLink]="['/search']">Cick here to browse
+                    recipes.</a></div>
+        </div>
+    </div>

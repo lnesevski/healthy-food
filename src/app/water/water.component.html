@@ -1,0 +1,37 @@
+<h5 class="h5 text-center text-primary">Water Consumption</h5>
+<div class="container text-center">
+  <circle-progress *ngIf="saved" [percent]="30" [radius]="200" [outerStrokeWidth]="20" [innerStrokeWidth]="15"
+    [outerStrokeColor]="'#89CFF0'" [innerStrokeColor]="'#0096FF'" [animation]="true" [animationDuration]="300"
+    [title]="'Daily Water Goal'">
+  </circle-progress>
+
+  <circle-progress *ngIf="!saved" [percent]="0" [radius]="200" [outerStrokeWidth]="20" [innerStrokeWidth]="15"
+    [outerStrokeColor]="'#89CFF0'" [innerStrokeColor]="'#0096FF'" [animation]="true" [animationDuration]="300"
+    [title]="'Daily Water Goal'">
+  </circle-progress>
+
+
+  <form>
+    <div class="row m-3">
+      <label class="text-primary  col-sm-2 col-form-label">Daily Goal</label>
+      <input type="number" value="3" class="  col-sm-3">
+      <select class=" col-sm-4">
+        <option>
+          Liters
+        </option>
+        <option>
+          Gallons
+        </option>
+      </select>
+    </div>
+    <div class="row m-3">
+      <label class="text-primary col-sm-2 col-form-label">1 Drink Size</label>
+      <input type="number" value="200" class="col-sm-3">
+      <select class="col-sm-4">
+        <option selected>Milliliters</option>
+        <option>Ounces</option>
+      </select>
+    </div>
+  </form>
+  <div class="btn btn-primary" (click)="save()">Save Changes</div>
+</div>

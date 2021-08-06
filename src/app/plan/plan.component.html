@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="h4 text-center">Choose a plan</div>
+    <div class="content">
+        <div class="alert alert-info">
+            <div>Click on one of the boxes to choose a plan</div>
+            <div>When you select a plan, meals are added to your calendar</div>
+        </div>
+        <div *ngIf="selected" class="h6 text-center">Selected Plan: Intermittent Fasting <div
+                class="btn btn-outline-primary alert-link" [routerLink]="['/calendar']">Click
+                here to view calendar</div>
+        </div>
+        <div class="grid">
+            <div *ngFor="let plan of plans" class="card col-sm-12" (click)="selectPlan($event)">
+                <div class="card-body">
+                    <h6 class="card-title">{{plan.title}}</h6>
+                    <p class="card-text">{{plan.desc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

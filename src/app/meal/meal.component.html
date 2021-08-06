@@ -1,0 +1,28 @@
+<div *ngIf='meal'>
+    <div class="text-center h5">{{meal!.title}}</div>
+
+    <div class="col-md-6 myDiv">
+        {{meal!.shrotDesc}}
+    </div>
+
+    <div class="container d-md-flex justify-content-center">
+        <div class="col-md-4 m-3">
+            <h6 class="h6">Details</h6>
+            <div *ngFor='let d of meal.info' class='li-item'>
+                {{d}}
+            </div>
+        </div>
+        <div class="col-md-4 m-3">
+
+            <img class="myImg" src="{{meal.imgUrl}}">
+        </div>
+        <div class="col-md-4 m-3">
+            <h6 class="h6">Ingredients</h6>
+            <div *ngFor='let i of meal.ingredients'>
+                {{i}}
+            </div>
+            <input type="button" class="btn btn-danger" value="Add ingredients to shopping list" (click)="setItem(meal)"
+                [routerLink]="['/shoppingList']">
+        </div>
+    </div>
+</div>
